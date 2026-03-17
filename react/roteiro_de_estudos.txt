@@ -1,0 +1,321 @@
+1. Funções e manipulação de dados
+
+Base para quase todo código React.
+
+Em JavaScript crie um mini-projeto:
+
+Projeto: Analisador de lista
+
+Entrada:
+
+[
+ {nome:"Ana", idade:22},
+ {nome:"Carlos", idade:30},
+ {nome:"Maria", idade:18}
+]
+
+Funções que você deve implementar:
+
+retornar idade média
+
+retornar pessoa mais velha
+
+retornar lista ordenada
+
+filtrar maiores de idade
+
+Use:
+
+map
+
+filter
+
+reduce
+
+sort
+
+2. Closures
+
+Projeto curto: contador privado
+
+Criar uma função que gere contadores independentes.
+
+Exemplo de uso esperado:
+
+const contadorA = criarContador()
+contadorA()
+contadorA()
+
+const contadorB = criarContador()
+contadorB()
+
+Cada contador deve manter seu próprio estado interno.
+
+3. Funções de ordem superior
+
+Projeto: mini biblioteca de utilidades
+
+Implemente suas próprias versões de:
+
+map
+
+filter
+
+reduce
+
+Objetivo: entender profundamente transformação de arrays.
+
+4. Imutabilidade
+
+Projeto: atualização de objeto sem mutação
+
+Dado:
+
+usuario = {
+ nome: "Gabriel",
+ idade: 20,
+ endereco: {cidade:"Curitiba"}
+}
+
+Crie funções que atualizem:
+
+nome
+
+idade
+
+cidade
+
+Sem alterar o objeto original.
+
+5. Promises
+
+Projeto: simulador de requisições
+
+Crie funções que simulam requisições com setTimeout.
+
+Depois implemente:
+
+execução sequencial
+
+execução paralela com Promise.all
+
+6. Async / Await
+
+Projeto: buscador de dados
+
+Crie um programa que:
+
+busca uma lista de usuários
+
+depois busca os posts de cada usuário
+
+organiza tudo em uma estrutura única
+
+7. Event Loop
+
+Projeto: simulador de tarefas
+
+Crie funções que misturam:
+
+setTimeout
+
+promises
+
+código síncrono
+
+Depois tente prever a ordem de execução antes de rodar.
+
+8. Estruturas Map e Set
+
+Projeto: contador de palavras
+
+Entrada:
+
+"react react javascript javascript javascript node"
+
+Resultado esperado:
+
+react:2
+javascript:3
+node:1
+
+Use Map.
+
+9. Prototype
+
+Projeto: mini sistema de objetos
+
+Crie um "modelo" de objeto manualmente usando prototype.
+
+Exemplo:
+
+Usuario
+ ├ nome
+ ├ login()
+ └ logout()
+
+Crie múltiplos usuários compartilhando os mesmos métodos.
+
+10. Observer pattern
+
+Projeto: sistema de eventos
+
+Implemente:
+
+subscribe
+
+unsubscribe
+
+emit
+
+Isso simula como muitas bibliotecas funcionam internamente.
+
+Agora começar React
+
+Depois desses exercícios, começar projetos com React.
+
+11. Componentes e JSX
+
+Projeto: cartão de perfil
+
+Criar componente que recebe props:
+
+nome
+foto
+bio
+
+Renderizar vários perfis.
+
+12. Estado (useState)
+
+Projeto: contador avançado
+
+Funções:
+
+incrementar
+
+decrementar
+
+resetar
+
+histórico de valores
+
+13. Listas dinâmicas
+
+Projeto: lista de tarefas
+
+Funções:
+
+adicionar tarefa
+
+remover tarefa
+
+marcar como concluída
+
+14. useEffect
+
+Projeto: buscador de usuários
+
+Buscar dados de API usando:
+
+Axios
+
+Mostrar:
+
+loading
+
+erro
+
+dados
+
+15. Componentização
+
+Projeto: dashboard simples
+
+Separar em componentes:
+
+App
+ ├ Sidebar
+ ├ Header
+ ├ Lista
+ └ Item
+16. Rotas
+
+Projeto: mini site
+
+Usar:
+
+React Router
+
+Páginas:
+
+Home
+
+Produtos
+
+Produto individual
+
+Sobre
+
+17. Estado global
+
+Projeto: carrinho de compras
+
+Implementar:
+
+adicionar produto
+
+remover produto
+
+total do carrinho
+
+Usar Context API ou Redux.
+
+18. Hooks personalizados
+
+Projeto: hook de busca
+
+Criar hook:
+
+useFetch(url)
+
+Ele deve retornar:
+
+data
+loading
+error
+19. Cache de dados
+
+Projeto: sistema de posts
+
+Usar:
+
+React Query
+
+Implementar:
+
+cache
+
+refetch automático
+
+loading states
+
+20. Projeto final
+
+Aplicação completa usando React.
+
+Sugestão:
+
+mini rede social
+
+Funções:
+
+login
+
+feed de posts
+
+comentários
+
+curtidas
+
+perfil
