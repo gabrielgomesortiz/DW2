@@ -1,0 +1,1 @@
+Aqui tem tdo parte de js puro sem react.

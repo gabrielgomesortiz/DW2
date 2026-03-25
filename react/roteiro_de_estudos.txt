@@ -1,38 +1,5 @@
 1. Funções e manipulação de dados
 
-Base para quase todo código React.
-
-Em JavaScript crie um mini-projeto:
-
-Projeto: Analisador de lista
-
-Entrada:
-
-[
- {nome:"Ana", idade:22},
- {nome:"Carlos", idade:30},
- {nome:"Maria", idade:18}
-]
-
-Funções que você deve implementar:
-
-retornar idade média
-
-retornar pessoa mais velha
-
-retornar lista ordenada
-
-filtrar maiores de idade
-
-Use:
-
-map
-
-filter
-
-reduce
-
-sort
 
 2. Closures
 
