@@ -1,0 +1,82 @@
+/* App.css */
+@import url('<https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap>');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.painel-container {
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.titulo-painel {
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.grid-usuarios {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.user-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.user-nome {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+
+.user-nivel {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: #f8f9fa;
+  width: fit-content;
+}
+
+.user-nome-admin {
+  color: #6366f1;
+}
+.user-nome-comum {
+  color: #333;
+}
