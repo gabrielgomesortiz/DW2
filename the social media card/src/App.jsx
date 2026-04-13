@@ -51,6 +51,7 @@ export default function App() {
             key={user.id}
             name={user.name}
             role={user.role}
+            isVerified={user.isVerified}
             status={user.status}
             bio = {user.bio}
           />
