@@ -1,3 +1,4 @@
+import './index.css'
 import './App.css'
 import { ProfileCard } from './components/ProfileCard'
 // App.jsx
