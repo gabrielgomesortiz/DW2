@@ -4,7 +4,7 @@ import { useState } from "react"
 function App() {
   const [contador, setContador] = useState(0)
   const soma = () => {
-    contador++
+    setContador(contador + 1)
   }
   return (
     <>
