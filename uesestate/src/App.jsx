@@ -1,39 +1,26 @@
-import { use, useState } from "react"
+import { useState } from "react"
 
 
 function App() {
   const [contador, setContador] = useState(0)
+
   const soma = () => {
-    setContador(contador + 1)
-  }
-  const soma2 = () => {
-    contador == 0 ?
-      setContador(contador + 1 * 3)
-      :
-      setContador(contador * 3)
+    setContador(prev => prev + 1)
   }
   const diferenca = () => {
-    contador != 0 ?
-      setContador(contador - 1)
-      :
-      alert("não pode")
+    setContador(prev => prev - 1)
 
   }
   const zerar = () => {
-    contador != 0 ?
-      setContador(0)
-      :
-      alert("não pode")
-
+    setContador(0)
   }
 
 
   return (
     <>
       <h1>{contador}</h1>
-      <button onClick={soma}>implementa 1x</button>
-      <button onClick={soma2}>implementa 3x</button>
-      <button onClick={diferenca}> diferença</button>
+      <button onClick={soma} disabled={contador === 10}>implementa 1x</button>
+      <button onClick={diferenca} disabled={contador === 0}> diferença</button>
       <button onClick={zerar}>zerar contador</button>
 
     </>
