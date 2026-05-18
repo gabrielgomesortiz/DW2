@@ -158,3 +158,53 @@
 .icone-carrinho{
   background-color: #fff;
 }
+
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.filter-select,
+.search-input,
+.limpar-filtros {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: white;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 10px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.filter-select:focus,
+.search-input:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.filter-select option {
+  background: #111;
+}
+
+.search-input {
+  min-width: 220px;
+}
+
+.search-input::placeholder {
+  color: #71717a;
+}
+
+.empty-state {
+  color: #71717a;
+  font-size: 1rem;
+  margin-top: 60px;
+  text-align: center;
+}
+.limpar-filtros{
+    min-width: 5em;
+
+}
