@@ -232,7 +232,25 @@ export default function App() {
           />
           <MensagemErro id="erro-portfolio" mensagem={erros.portfolio} />
         </div>
+        <div className="field">
+          <input
+            id="confirmarEmail"
+            name="confirmarEmail"
+            type="email"
+            value={formulario.confirmarEmail}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            aria-invalid={Boolean(erros.confirmarEmail)}
+            aria-describedby={
+              erros.confirmarEmail ? "erro-confirmarEmail" : undefined
+            }
+          />
 
+          <MensagemErro
+            id="erro-confirmarEmail"
+            mensagem={erros.confirmarEmail}
+          />
+        </div>
         <div className="field">
           <label className="checkbox-row">
             <input
