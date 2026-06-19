@@ -4,22 +4,12 @@ import "./App.css";
 const valoresIniciais = {
   nome: "",
   email: "",
+  confirmarEmail: "",
   idade: "",
   trilha: "",
   portfolio: "",
   aceitaTermos: false,
 };
-function MensagemErro({ id, mensagem }) {
-  if (!mensagem) {
-    return null;
-  }
-
-  return (
-    <span className="error-message" id={id} role="alert">
-      {mensagem}
-    </span>
-  );
-}
 
 function validarFormulario(valores) {
   const errosEncontrados = {};
@@ -36,11 +26,26 @@ function validarFormulario(valores) {
   }
 
   if (valores.nome.trim().length < 3) {
-    errosEncontrados.nome = "Informe um nome com pelo menos 3 caracteres.";
+    errosEncontrados.nome =
+      "Informe um nome com pelo menos 3 caracteres.";
   }
 
   if (!emailValido.test(valores.email.trim())) {
     errosEncontrados.email = "Informe um e-mail válido.";
+  }
+
+  const emailNormalizado =
+    valores.email.trim().toLowerCase();
+
+  const confirmarEmailNormalizado =
+    valores.confirmarEmail.trim().toLowerCase();
+
+  if (
+    confirmarEmailNormalizado &&
+    emailNormalizado !== confirmarEmailNormalizado
+  ) {
+    errosEncontrados.confirmarEmail =
+      "Os e-mails informados devem ser iguais.";
   }
 
   if (
@@ -67,7 +72,7 @@ function validarFormulario(valores) {
       "Você precisa aceitar as regras de participação.";
   }
 
-  const dadosNormalizados = {
+  const { confirmarEmail, ...dadosNormalizados } = {
     ...valores,
     nome: valores.nome.trim(),
     email: valores.email.trim().toLowerCase(),
@@ -80,7 +85,17 @@ function validarFormulario(valores) {
     dados: dadosNormalizados,
   };
 }
+function MensagemErro({ id, mensagem }) {
+  if (!mensagem) {
+    return null;
+  }
 
+  return (
+    <span className="error-message" id={id} role="alert">
+      {mensagem}
+    </span>
+  );
+}
 export default function App() {
   const [formulario, setFormulario] = useState(valoresIniciais);
   const [erros, setErros] = useState({});
@@ -99,12 +114,22 @@ export default function App() {
     setFormulario(formularioAtualizado);
     setStatus("editando");
 
-    if (tocados[name]) {
-      const resultado = validarFormulario(formularioAtualizado);
+    const resultado = validarFormulario(formularioAtualizado);
 
+    if (tocados[name]) {
       setErros((atuais) => ({
         ...atuais,
         [name]: resultado.erros[name],
+      }));
+    }
+
+    if (
+      (name === "email" || name === "confirmarEmail") &&
+      tocados.confirmarEmail
+    ) {
+      setErros((atuais) => ({
+        ...atuais,
+        confirmarEmail: resultado.erros.confirmarEmail,
       }));
     }
   }
@@ -118,6 +143,7 @@ export default function App() {
     setTocados({
       nome: true,
       email: true,
+      confirmarEmail: true,
       idade: true,
       trilha: true,
       portfolio: true,
@@ -149,6 +175,16 @@ export default function App() {
       ...atuais,
       [campo]: resultado.erros[campo],
     }));
+
+    if (
+      campo === "email" ||
+      campo === "confirmarEmail"
+    ) {
+      setErros((atuais) => ({
+        ...atuais,
+        confirmarEmail: resultado.erros.confirmarEmail,
+      }));
+    }
   }
   return (
     <main className="page">
@@ -181,6 +217,7 @@ export default function App() {
             type="email"
             value={formulario.email}
             onChange={handleChange}
+            onBlur={handleBlur}
             aria-invalid={Boolean(erros.email)}
             aria-describedby={erros.email ? "erro-email" : undefined}
           />
@@ -233,6 +270,10 @@ export default function App() {
           <MensagemErro id="erro-portfolio" mensagem={erros.portfolio} />
         </div>
         <div className="field">
+          <label htmlFor="confirmarEmail">
+            Confirmar e-mail
+          </label>
+
           <input
             id="confirmarEmail"
             name="confirmarEmail"
@@ -242,7 +283,9 @@ export default function App() {
             onBlur={handleBlur}
             aria-invalid={Boolean(erros.confirmarEmail)}
             aria-describedby={
-              erros.confirmarEmail ? "erro-confirmarEmail" : undefined
+              erros.confirmarEmail
+                ? "erro-confirmarEmail"
+                : undefined
             }
           />
 
