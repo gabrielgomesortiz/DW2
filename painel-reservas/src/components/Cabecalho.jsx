@@ -1,17 +1,21 @@
 import { NavLink } from "react-router";
 
-<NavLink to="/reservas">Reservas</NavLink>;
+export default function Cabecalho({ reservas }) {
+  const quantidadeEmAndamento = reservas.filter(
+    (reserva) => reserva.status === "em andamento"
+  ).length;
 
-export default function Cabecalho() {
   return (
     <header className="cabecalho">
       <span className="marca">Reservas</span>
+
       <nav>
-        <NavLink to="/resumo">Resumo</NavLink>
+        <NavLink to="/">Resumo</NavLink>
         <NavLink to="/reservas">Reservas</NavLink>
-        <NavLink to="/salas">Reservas</NavLink>
+        <NavLink to="/salas">Salas</NavLink>
       </nav>
-      <p>1 em andamento</p>
+
+      <p>{quantidadeEmAndamento} em andamento</p>
     </header>
   );
 }

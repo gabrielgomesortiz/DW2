@@ -1,12 +1,15 @@
 import ListaReservas from "../components/ListaReservas";
-import { reservas } from "../data/reservas";
 
-export default function Reservas() {
+export default function Reservas({ reservas, mudarStatus }) {
   return (
     <main>
       <p className="sobretitulo">Agenda do dia</p>
       <h1>Reservas</h1>
-      <ListaReservas reservas={reservas} />
+
+      <ListaReservas
+        reservas={reservas}
+        onAlterarStatus={mudarStatus}
+      />
     </main>
   );
 }
